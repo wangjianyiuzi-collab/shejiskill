@@ -1,0 +1,4 @@
+interface:
+  display_name: "直播海报排版优化"
+  short_description: "用蒸馏母版优化直播海报、商品卡和移动端信息层级"
+  default_prompt: "使用 $optimize-live-poster-layouts 分析并优化这张直播海报的排版。"
