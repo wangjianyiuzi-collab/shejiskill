@@ -1,376 +1,112 @@
 {
-  "version": "1.0",
-  "scope": "通用微信公众号直播预热视觉（脱敏版）；基于9篇文章171张图片，保留117张有效海报素材。",
-  "global_design_system": {
-    "brand_identifiers": [
-      "{{直播间名称}}",
-      "{{品牌英文名}}",
-      "{{品牌图形标识}}"
-    ],
-    "core_palette": [
-      {
-        "name": "深咖黑",
-        "hex": "#1B100C",
-        "use": "深色活动、商品清单背景"
-      },
-      {
-        "name": "木质棕",
-        "hex": "#4B2C1D",
-        "use": "服饰、生活方式背景"
-      },
-      {
-        "name": "暖金",
-        "hex": "#D7B36A",
-        "use": "标题、边框、福利强调"
-      },
-      {
-        "name": "奶油白",
-        "hex": "#F5E9D5",
-        "use": "信息卡、正文底色"
-      },
-      {
-        "name": "活动橙",
-        "hex": "#F06432",
-        "use": "按钮、福利、直播状态"
-      }
-    ],
-    "secondary_theme_palette": [
-      {
-        "name": "宣纸米",
-        "hex": "#EFE2C8",
-        "use": "云南、美食、文化主题长图"
-      },
-      {
-        "name": "砖红",
-        "hex": "#A94B2B",
-        "use": "印章、传统文化强调"
-      },
-      {
-        "name": "炭黑",
-        "hex": "#2A2521",
-        "use": "正文与轮廓"
-      }
-    ],
-    "typography": {
-      "display": "中文高字重标题，可使用书法、金属立体、描边或窄体；一张图只用一种主标题效果。",
-      "information": "日期、时间、商品名使用清晰黑体；数字建议等宽或窄体粗字。",
-      "decorative": "英文手写体/衬线体只作小面积氛围，不承载核心信息。",
-      "maximum_levels": 4
+  "version": "1.1",
+  "scope": "Chinese livestream-commerce and social-poster layout rules. These are operational defaults, not a universal visual style. Brand guidelines and explicit references override aesthetic defaults but never factual or readability gates.",
+  "output_profiles": {
+    "xiaohongshu_feed": {
+      "ratio": "3:4",
+      "recommended_px": [1080, 1440],
+      "safe_margin_percent": [5, 7],
+      "thumbnail_test_percent": 25
     },
-    "spacing_and_grid": [
-      "移动端安全边距建议画布宽度的5%—7%",
-      "同类卡片内边距保持画布宽度的3%—5%",
-      "模块间距至少为正文行高的1.2倍",
-      "Logo与主标题之间保留明显空隙"
-    ],
-    "image_treatment": [
-      "人物使用半身或全身抠图，避免切断手部与关键服饰",
-      "商品图统一白平衡、视角和投影方向",
-      "同组照片使用同色温；细节图使用统一相框或边框",
-      "复杂背景下为文字增加纯色底、暗角或局部遮罩"
-    ],
-    "copy_rules": [
-      "主标题优先8—16字",
-      "单品卖点每条不超过18字，最多3条",
-      "活动规则最多4步",
-      "宣发物料中“元”优先写为“💰”，“券”优先写为“⭕️”",
-      "即时优惠与返利/红包后优惠必须分开表达",
-      "无明确依据时避免“最低价、全网最低、绝对、必买、无脑入”等词"
+    "instagram_feed": {
+      "ratio": "4:5",
+      "recommended_px": [1080, 1350],
+      "safe_margin_percent": [5, 7],
+      "thumbnail_test_percent": 25
+    },
+    "story_or_video_cover": {
+      "ratio": "9:16",
+      "recommended_px": [1080, 1920],
+      "safe_margin_percent": [6, 8],
+      "avoid_zones": "Reserve interface-safe space near top and bottom according to the target platform."
+    },
+    "wechat_longform": {
+      "ratio": "content-led",
+      "recommended_width_px": 1080,
+      "rule": "Build repeatable vertical modules; do not shrink a feed poster into a long image."
+    }
+  },
+  "information_layers": {
+    "critical": {
+      "includes": ["primary title", "date/time", "primary price or benefit", "CTA", "required disclaimer"],
+      "rules": [
+        "Never crop or obscure critical copy.",
+        "Give each critical block a controlled local contrast field.",
+        "Keep title, key fact, conversion anchor, and CTA readable in one three-second path."
+      ]
+    },
+    "support": {
+      "includes": ["product name", "selling points", "secondary rules", "labels", "qualifiers"],
+      "rules": [
+        "Keep support copy readable at intended mobile size.",
+        "Reduce copy before reducing it below practical reading size."
+      ]
+    },
+    "graphic": {
+      "includes": ["person", "product", "giant numeral", "pattern", "texture", "decorative type"],
+      "rules": [
+        "Graphic layers may overlap or crop only when critical and support reading remain intact.",
+        "Every graphic layer must support hierarchy, grouping, navigation, atmosphere, or conversion."
+      ]
+    }
+  },
+  "typography": {
+    "maximum_levels": 4,
+    "title_length_guidance_chinese_characters": [8, 16],
+    "selling_points_per_product_max": 3,
+    "selling_point_length_guidance_chinese_characters": 18,
+    "activity_steps_max": 4,
+    "rules": [
+      "Use one dominant title treatment per poster.",
+      "Use clear Chinese sans-serif type for dates, times, product names, prices, and rules unless the brand system requires another legible face.",
+      "Use decorative serif, handwriting, outline, metallic, or dimensional type only as a controlled display treatment.",
+      "For long Chinese titles, use two lines before reducing size; never horizontally compress glyphs.",
+      "Do not use random English words as texture. Microcopy must communicate real metadata."
     ]
   },
-  "templates": [
-    {
-      "template_id": "T01_HERO_CAMPAIGN",
-      "name": "主活动主视觉",
-      "count": 7,
-      "share": 0.0598,
-      "representative_images": [
-        "Image_66",
-        "Image_109",
-        "Image_124"
-      ],
-      "purpose": "在一屏内建立活动名称、日期时间和核心利益点，承担文章首图或传播封面。",
-      "canvas": "推荐 3:4、4:5 或横版 2.3:1；首图场景优先保证移动端首屏可读。",
-      "layout": [
-        "顶部：直播间Logo或活动倒计时",
-        "中部：最大字号活动标题，占画面约25%—40%",
-        "四周/下部：人物或商品主视觉",
-        "底部：时间、平台搜索词或福利说明"
-      ],
-      "visual_rules": [
-        "标题使用高对比装饰字或立体金属字",
-        "主体与标题形成前后景叠压，但不能遮挡日期",
-        "背景使用主题材质，如电影胶片、地域纹样、节庆灯光",
-        "最多保留一个核心利益点，其他信息下沉"
-      ],
-      "variables": [
-        "活动名",
-        "日期/时间",
-        "福利信息",
-        "人物/商品",
-        "主题背景",
-        "主色"
-      ],
-      "prompt_template": "为「{{直播间名称}}」设计直播主活动海报，主题为「{{活动名}}」，{{日期时间}}开播。使用{{主题材质}}背景，主标题占上半区25%—40%，{{人物或商品}}作为中下部主视觉，加入{{品牌标识}}和{{福利信息}}。画面高对比、移动端首屏可读、不要生成乱码文字；文字区域留空供后期排版。"
-    },
-    {
-      "template_id": "T02_WEEKLY_SCHEDULE",
-      "name": "周排期/系列预告",
-      "count": 5,
-      "share": 0.0427,
-      "representative_images": [
-        "Image_04",
-        "Image_89",
-        "Image_161"
-      ],
-      "purpose": "同时回答“未来几天播什么”和“今天几点播”，适合作为公众号预告的首个信息总览。",
-      "canvas": "竖版长图；顶部排期区约35%，下部主题主视觉约65%。",
-      "layout": [
-        "顶部大标题：{{直播间名称}}预告",
-        "日期卡片横向等宽排列，3—4列",
-        "今日直播排期用白底独立卡片强调",
-        "下半区可接人物/主题海报，形成总览+主推"
-      ],
-      "visual_rules": [
-        "日期使用高识别粗体数字",
-        "卡片圆角统一，阴影轻且方向一致",
-        "今天场次使用LIVE、圆点或强调色标记",
-        "卡片内容不超过3行"
-      ],
-      "variables": [
-        "日期数量",
-        "场次数量",
-        "主题名称",
-        "主推人物/活动",
-        "主色"
-      ],
-      "prompt_template": "生成「{{直播间名称}}」周排期视觉背景：顶部预留四列日期卡片，中央预留今日直播排期白色信息卡，下半区展示{{主推人物或活动}}。主色为{{主色}}，辅色为奶油白与品牌强调色，信息区清晰规整；不要生成文字，保留可编辑文字框。"
-    },
-    {
-      "template_id": "T03_LIVE_TIME_CAPSULE",
-      "name": "开播时间胶囊",
-      "count": 5,
-      "share": 0.0427,
-      "representative_images": [
-        "Image_03",
-        "Image_88",
-        "Image_143"
-      ],
-      "purpose": "在正文段落之间重复强化开播时间，属于可组合的小型转化组件。",
-      "canvas": "透明底横向组件，约4.5:1至6:1。",
-      "layout": [
-        "左侧日期色块",
-        "中部播放按钮",
-        "右侧时间和“开播”",
-        "下方一行行动提示"
-      ],
-      "visual_rules": [
-        "日期与时间必须是最大信息",
-        "使用胶囊圆角，背景高对比",
-        "CTA不超过12字",
-        "组件四周保留透明安全边距"
-      ],
-      "variables": [
-        "日期",
-        "时间",
-        "CTA",
-        "胶囊主色"
-      ],
-      "prompt_template": "制作透明底直播时间胶囊组件：左侧{{日期}}，中间圆形播放图标，右侧{{时间}}开播，下方写{{CTA}}。使用{{主色}}与白色高对比，圆角胶囊、简洁扁平、适配公众号正文。"
-    },
-    {
-      "template_id": "T04_SINGLE_PRODUCT_STORY",
-      "name": "单品/穿搭故事卡",
-      "count": 27,
-      "share": 0.2308,
-      "representative_images": [
-        "Image_06",
-        "Image_10",
-        "Image_34"
-      ],
-      "purpose": "用一张完整内容卡讲清单品名称、上身效果和2—3条卖点。",
-      "canvas": "竖版约2:3；主体人物/商品占55%—70%。",
-      "layout": [
-        "顶部：品牌/单品名",
-        "中部：一张大主图+1—2张细节图",
-        "底部：2—3条卖点文案",
-        "角落：英文装饰字或品牌小标"
-      ],
-      "visual_rules": [
-        "主图使用抠图或完整人像，细节图置于同材质相框",
-        "背景材质与品类匹配，但颜色不抢主体",
-        "卖点每条不超过18字，最多3条",
-        "统一照片色温和阴影方向"
-      ],
-      "variables": [
-        "人物/商品图",
-        "商品名",
-        "卖点",
-        "背景材质",
-        "相框样式",
-        "配色"
-      ],
-      "prompt_template": "设计单品故事卡背景，展示{{人物或商品}}，主图占画面60%，右侧或下方安排两张细节图，背景为{{材质}}，配色{{配色}}。预留商品名和三条短卖点文字区，风格编辑感、统一光影、移动端清晰；不要生成文字。"
-    },
-    {
-      "template_id": "T05_MULTI_PRODUCT_CATALOG",
-      "name": "多商品清单",
-      "count": 51,
-      "share": 0.4359,
-      "representative_images": [
-        "Image_29",
-        "Image_90",
-        "Image_150"
-      ],
-      "purpose": "在有限宽度内展示多个品牌和商品，形成“爆品很多、值得蹲守”的认知。",
-      "canvas": "竖版模块化长图；每屏承载1—4个商品模块。",
-      "layout": [
-        "顶部栏目标题或品类标题",
-        "商品模块重复：商品图→品牌/品名→短卖点",
-        "多商品时使用2×2网格；重点商品使用单列大卡",
-        "模块之间使用同一分隔线、胶片框或留白"
-      ],
-      "visual_rules": [
-        "同层级商品卡高度一致",
-        "商品图优先白底或统一抠图",
-        "每个商品最多保留名称+2条卖点",
-        "跨品类长图通过栏目标题分段",
-        "不要把价格机制与返利后价格混写"
-      ],
-      "variables": [
-        "商品数量",
-        "品类标题",
-        "商品图",
-        "品牌/品名",
-        "卖点",
-        "福利角标"
-      ],
-      "prompt_template": "为直播商品清单生成模块化视觉背景，品类为{{品类}}，共{{商品数量}}件商品。使用{{单列大卡或2x2网格}}，每个模块预留商品图、品牌名、商品名和两条卖点；统一边框、留白和光影，主色{{主色}}，强调色{{强调色}}，不要生成文字或价格。"
-    },
-    {
-      "template_id": "T06_THEMATIC_LONGFORM",
-      "name": "主题长图内容",
-      "count": 17,
-      "share": 0.1453,
-      "representative_images": [
-        "Image_67",
-        "Image_68",
-        "Image_78",
-        "Image_133"
-      ],
-      "purpose": "围绕地域、美食或工艺主题连续讲故事，兼顾内容种草与直播导流。",
-      "canvas": "竖版超长图，由多个同构章节模块拼接。",
-      "layout": [
-        "开头：主题标题+一句钩子",
-        "正文：每个商品/知识点一个同构章节",
-        "章节内：短标题、描述、商品/场景图",
-        "结尾：直播日期和行动提示"
-      ],
-      "visual_rules": [
-        "每章保持同一轮廓框、纹样和标题位置",
-        "主题纹样只做边框/背景，不能压住正文",
-        "每章文本控制在60—100字以内",
-        "长图每2—3章设置节奏变化或留白"
-      ],
-      "variables": [
-        "主题",
-        "章节数量",
-        "每章标题",
-        "故事文案",
-        "图片",
-        "地域/文化纹样"
-      ],
-      "prompt_template": "制作{{主题}}公众号直播长图视觉系统，使用{{文化纹样/材质}}作为统一章节边框。每章包含标题、60—100字说明和一张{{商品或场景}}图，连续{{章节数量}}章；整体色调{{主色}}+{{强调色}}，保持模块一致但图片内容变化。不要生成文字，预留排版区域。"
-    },
-    {
-      "template_id": "T07_INTERACTION_BENEFIT",
-      "name": "福利互动/猜题图",
-      "count": 5,
-      "share": 0.0427,
-      "representative_images": [
-        "Image_62",
-        "Image_105",
-        "Image_120",
-        "Image_168"
-      ],
-      "purpose": "用红包、找不同、猜数字或许愿活动增加评论与停留。",
-      "canvas": "竖版3:4或4:5；规则区占40%—55%。",
-      "layout": [
-        "顶部：互动主题/福利标题",
-        "中部：题面或视觉谜题",
-        "下部：不超过4步的规则",
-        "最底部：参与方式和合规说明"
-      ],
-      "visual_rules": [
-        "题面必须比规则更醒目",
-        "规则使用编号或短行，不写成长段",
-        "答案与题面分图或延后公布",
-        "福利信息使用高对比色块",
-        "避免使用“最低价、绝对、必买”等高风险词"
-      ],
-      "variables": [
-        "互动主题",
-        "题面",
-        "福利",
-        "规则",
-        "参与入口",
-        "公布时间"
-      ],
-      "prompt_template": "设计直播互动福利图，主题{{互动主题}}，中部为{{题面形式}}，底部预留4步以内活动规则和参与方式。福利写作{{福利信息}}，使用{{主色}}+高对比强调色，题面最大、规则清晰；不要生成文字，留出可编辑区。"
-    }
+  "spacing_and_grid": {
+    "safe_margin_percent": [5, 7],
+    "card_padding_percent": [3, 5],
+    "module_gap_minimum": "1.2x body line-height",
+    "rules": [
+      "Align repeated elements to shared edges and baselines.",
+      "Keep visible separation between Logo and primary title.",
+      "Use intentional asymmetry only after establishing an underlying grid.",
+      "Do not solve density by shrinking everything equally. Protect the primary hierarchy first."
+    ]
+  },
+  "image_treatment": {
+    "single_subject_scale_percent": [55, 70],
+    "rules": [
+      "Preserve recognizable product form, face, hands, garment features, packaging, and required accessories.",
+      "Normalize white balance, viewing angle, crop logic, and shadow direction inside a repeated set.",
+      "Use one authored crop with a clear subject role rather than treating photos as wallpaper.",
+      "Add a solid backing, local darkening, or a restrained mask under text on complex imagery.",
+      "Do not fabricate or silently replace a supplied person, product, Logo, or package."
+    ]
+  },
+  "aesthetic_priority": [
+    "explicit brand guidelines",
+    "user-designated style reference",
+    "category, audience, campaign goal, and channel",
+    "aesthetic profile fallback"
   ],
-  "generation_workflow": [
-    {
-      "step": 1,
-      "name": "选模板",
-      "instruction": "按传播目标选择T01—T07，不按品类盲选。"
-    },
-    {
-      "step": 2,
-      "name": "填结构化变量",
-      "instruction": "先填写日期、时间、主题、人物/商品、卖点、福利、行动词。"
-    },
-    {
-      "step": 3,
-      "name": "生成无字底图",
-      "instruction": "图像模型只生成背景、人物/商品氛围和留白区，避免让模型直接绘制中文。"
-    },
-    {
-      "step": 4,
-      "name": "确定性排字",
-      "instruction": "用HTML Canvas、Figma或本地脚本叠加真实中文、Logo、日期和规则。"
-    },
-    {
-      "step": 5,
-      "name": "移动端检查",
-      "instruction": "按375px宽预览，确认标题、日期、价格机制和规则小字可读。"
-    },
-    {
-      "step": 6,
-      "name": "合规复核",
-      "instruction": "检查价格口径、高风险词、品牌授权、活动规则和免责声明。"
-    }
+  "fallback_palettes": {
+    "neutral_commerce": ["#171412", "#F5F0E8", "#FFFFFF", "#E85A2A"],
+    "warm_editorial": ["#2A2521", "#EFE2C8", "#A94B2B", "#D7B36A"],
+    "clean_catalog": ["#111111", "#F7F7F5", "#FFFFFF", "#D92D20"]
+  },
+  "palette_rule": "Fallback palettes are starting points only. Use one main field, one text system, and one dominant accent unless the supplied brand requires more.",
+  "fact_and_price_rules": [
+    "Preserve supplied identity, price, dates, rules, and qualifiers verbatim unless copy editing is explicitly requested.",
+    "Never invent benefits, coupons, gifts, accessories, endorsements, urgency, or missing text.",
+    "Separate instant discount, coupon value, rebate, red-envelope-after price, membership benefit, and conditional price.",
+    "Avoid unsupported absolute or lowest-price claims.",
+    "Use promotional symbol substitutions only when rewriting is authorized and the target-channel convention requires them."
   ],
-  "quality_gates": [
-    {
-      "gate": "信息完整",
-      "pass": "主题、日期/时间、直播间标识、行动指令齐全"
-    },
-    {
-      "gate": "层级清楚",
-      "pass": "3秒内能读到主标题和日期/时间"
-    },
-    {
-      "gate": "文字可靠",
-      "pass": "所有中文均由排版层生成，不是AI图片内乱码"
-    },
-    {
-      "gate": "品牌统一",
-      "pass": "Logo、色板、卡片圆角和标题效果在同一套图中一致"
-    },
-    {
-      "gate": "合规安全",
-      "pass": "无夸大词，价格机制区分即时优惠与返利后优惠"
-    }
-  ]
+  "production_contracts": {
+    "visual_background": "Generate composition, subject, lighting, materials, and reserved text fields without letters, numerals, Logos, watermarks, price figures, or fake interface text.",
+    "typesetting_specification": "Place exact supplied Chinese copy, numbers, Logo, price mechanisms, rules, and disclaimers with deterministic tools when available.",
+    "reference_roles": ["content source", "style source", "character source", "product source", "layout source"]
+  }
 }
